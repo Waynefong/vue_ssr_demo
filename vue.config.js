@@ -7,7 +7,6 @@ const merge = require("lodash.merge");
 const TARGET_NODE = process.env.WEBPACK_TARGET === "node";
 const target = TARGET_NODE ? "server" : "client";
 
-
 module.exports = {
     css: {
         extract: false

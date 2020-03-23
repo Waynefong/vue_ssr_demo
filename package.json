@@ -3,20 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "cross-env WEBPACK_TARGET=client VUE_APP_ENV=client vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:client": "vue-cli-service build",
+    "build:client": "cross-env VUE_APP_ENV=client vue-cli-service build",
     "build:server": "cross-env NODE_ENV=production WEBPACK_TARGET=node vue-cli-service build",
     "build:win": "npm run build:server && move dist\\vue-ssr-server-bundle.json bundle && npm run build:client && move bundle dist\\vue-ssr-server-bundle.json",
-    "start": "cross-env NODE_ENV=production node server.js",
-    "dev:serve": "cross-env WEBPACK_TARGET=node node server.js",
-    "dev": "concurrently \"npm run serve\" \"npm run dev:serve\" "
+    "build:mac": "npm run build:server && mv dist/vue-ssr-server-bundle.json bundle && npm run build:client && mv bundle dist/vue-ssr-server-bundle.json",
+    "dev:serve": "cross-env WEBPACK_TARGET=node VUE_APP_ENV=server node server.js",
+    "dev": "concurrently \"npm run serve\" \"npm run dev:serve\" ",
+    "run:pm2": "cross-env WEBPACK_TARGET=node VUE_APP_ENV=server pm2 start pm2.conf.json"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "concurrently": "^5.1.0",
     "core-js": "^3.6.4",
     "cross-env": "^7.0.2",
     "koa": "^2.11.0",
+    "koa-connect-history-api-fallback": "^0.3.1",
     "koa-router": "^8.0.8",
     "koa-static": "^5.0.0",
     "lodash.merge": "^4.6.2",
@@ -24,6 +27,7 @@
     "vue-router": "^3.1.5",
     "vue-server-renderer": "^2.6.11",
     "vuex": "^3.1.2",
+    "vuex-router-sync": "^5.0.0",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {

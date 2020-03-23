@@ -1,0 +1,10 @@
+{
+    "apps":[
+        {
+            "name":"vue_ssr_demo",
+            "script":"server.js",
+            "watch":true,
+            "instances":6
+        }
+    ]
+}
