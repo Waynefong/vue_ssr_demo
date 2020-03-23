@@ -7,7 +7,7 @@
 * 然后右键查看网页源代码，你就会发现里面很多东西
 
 ## 研究背景
-* 之前因为seo问题，曾经试过用nuxt.js写过项目，我也有分享过（[github链接](https://github.com/Waynefong/studyShare/blob/master/index.md)）。但是总感觉不是特别的完美，可能也是因为当时使用的比较仓促导致没有研究特别细致的原因。
+* 之前因为seo问题，曾经试过用nuxt.js写过项目，我也有分享过（[github链接](https://github.com/Waynefong/studyShare)）。但是总感觉不是特别的完美，可能也是因为当时使用的比较仓促导致没有研究特别细致的原因。
 * 这次我打算研究一下官方的写法
 
 ## 前言
