@@ -399,6 +399,14 @@ export default {
 * 最后就是`pm2 start pm2.conf.json`，我们的项目就成功跑起来啦！
 * 需要关闭、重启，可以使用一些字面意思的命令，比如`stop，restart，kill`
 
+***windows下配置pm2开机自启***
+* 安装`npm i pm2-windows-service -g`或者`cnpm i pm2-windows-service -g`
+* 自定义安装一个windows服务`pm2-service-install -n myservice`（定义一个叫myservice的服务）
+* 运行pm2`pm2 start pm2.conf.json`
+* 查看一下是否运行成功`pm2 list`
+* 记得要保存一下脚本`pm2 save`
+* 这样就完成了自启配置（如果不行，可检查一下pm2的环境变量是否配置）
+
 ## 其它
 ***cross-env的妙用***
 * 拿上述的部署来说，可能我们在执行node入口文件的时候，也存在一些环境变量的问题，那么我们就不能单纯的使用`pm2 start xxx`
