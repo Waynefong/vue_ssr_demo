@@ -14,7 +14,7 @@
     "run:pm2": "cross-env WEBPACK_TARGET=node VUE_APP_ENV=server pm2 start pm2.conf.json"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "concurrently": "^5.1.0",
     "core-js": "^3.6.4",
     "cross-env": "^7.0.2",
